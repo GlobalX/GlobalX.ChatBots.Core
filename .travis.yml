@@ -7,8 +7,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script:
-    - dotnet pack src/GlobalX.ChatBots.Core/GlobalX.ChatBots.Core.csproj -p:PackageVersion=$VERSION -o ../../
-    - dotnet nuget push GlobalX.ChatBots.Core.$VERSION.nupkg -k $NUGET_API_KEY -s nuget.org
+  script: chmod +x ./deploy.sh && ./deploy.sh $VERSION $NUGET_API_KEY
   on:
     branch: master
