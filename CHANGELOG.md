@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/GlobalX/GlobalX.ChatBots.Core/compare/v1.2.0...v1.3.0) (2020-01-30)
+
+
+### Features
+
+* add message type for lists ([4e42dbe](https://github.com/GlobalX/GlobalX.ChatBots.Core/commit/4e42dbe8b8ec5f1f60ca1f1125f94230f56a9b61))
+
 # [1.2.0](https://github.com/GlobalX/GlobalX.ChatBots.Core/compare/v1.1.0...v1.2.0) (2020-01-22)
 
 
