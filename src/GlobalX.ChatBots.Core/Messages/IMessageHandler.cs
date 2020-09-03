@@ -3,17 +3,20 @@ using System.Threading.Tasks;
 namespace GlobalX.ChatBots.Core.Messages {
     public interface IMessageHandler
     {
-        Task<Message> SendMessageAsync(Message message);
-
         /// <summary>
-        /// Send a message in reply to another message,
-        /// in a system with support for threaded messaging.
-        ///
-        /// Fall back to a standard message reply in systems lacking threaded messaging.
+        /// Send a message.
         /// </summary>
-        /// <param name="message">The message to be sent.</param>
-        /// <param name="parentId">The id of the message to be replied to.
-        /// Systems with only single-level threading should allow any id within a thread to be used.</param>
-        Task<Message> SendReplyAsync(Message message, string parentId);
+        /// <param name="message">The message to be sent.
+        ///   **Id:** Leave null when creating a new message to send.
+        ///   **Created:** Leave null when creating a new message to send.
+        ///   **Text:** Plain text representation of the message.
+        ///   **MessageParts:** The full contents of the message, including formatting and user mentions.
+        ///   **Sender:** Leave null when creating a message to send.
+        ///   **RoomId:** The ID of the room to which the message should be sent.
+        ///   **ParentId:** Set to the ID of the message to which you wish to reply, if you wish to make an inline reply.
+        ///                 Leave null to create a top-level message.
+        ///   **RoomType:** Direct for direct messages or Group for a public group chat room.
+        /// </param>
+        Task<Message> SendMessageAsync(Message message);
     }
 }
